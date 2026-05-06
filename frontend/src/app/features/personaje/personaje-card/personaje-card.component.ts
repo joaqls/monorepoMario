@@ -1,0 +1,23 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Personaje } from '../models/personaje.model';
+
+@Component({
+  selector: 'app-personaje-card',
+  templateUrl: './personaje-card.component.html',
+  styleUrls: ['./personaje-card.component.css']
+})
+export class ItemCardComponent {
+
+  @Input() personaje!: Personaje;
+@Output() eliminar = new EventEmitter<string>();
+
+borrar() {
+  this.eliminar.emit(this.personaje._id);
+}
+
+  mostrarEliminar = false;
+abrirEliminar() {
+  this.mostrarEliminar = true;
+}
+}
+
