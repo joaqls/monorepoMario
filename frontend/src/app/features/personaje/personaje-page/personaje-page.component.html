@@ -1,0 +1,13 @@
+<h1>Listado de elementos</h1>
+
+<button (click)="abrirFormulario()">Añadir nuevo</button>
+
+<div *ngFor="let personaje of personajes$ | async">
+  <app-personaje-card [personaje]="personaje"></app-personaje-card>
+</div>
+
+
+<app-new-personaje
+  *ngIf="mostrarFormulario"
+  (cerrar)="cerrarFormulario()">
+</app-new-personaje>
