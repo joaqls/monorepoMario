@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { ItemService } from 'src/app/core/services/personaje.service';
 
 @Component({
+  standalone: false,
   selector: 'app-new-personaje',
   templateUrl: './new-personaje.component.html',
   styleUrls: ['./new-personaje.component.css']

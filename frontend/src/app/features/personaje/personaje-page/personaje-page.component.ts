@@ -3,6 +3,7 @@ import { ItemService } from 'src/app/core/services/personaje.service';
 import { Personaje } from '../models/personaje.model';
 
 @Component({
+  standalone: false,
   selector: 'app-personaje-page',
   templateUrl: './personaje-page.component.html',
   styleUrls: ['./personaje-page.component.css']

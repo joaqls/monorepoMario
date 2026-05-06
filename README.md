@@ -116,7 +116,7 @@ Haz commit y push de ese cambio.
    | **Name** | `mariodex-frontend` |
    | **Root Directory** | `frontend` |
    | **Build Command** | `npm ci && npm run build` |
-   | **Publish Directory** | `dist/nombre-app` |
+   | **Publish Directory** | `dist/nombre-app/browser` |
    | **Branch** | `main` |
 
 4. Clic en **Create Static Site**
