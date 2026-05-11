@@ -41,9 +41,11 @@ RUN chown -R www-data:www-data /var/www/html \
 # Copy Nginx and Supervisor configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/supervisord.conf /etc/supervisord.conf
+COPY docker/start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
 
 # Render uses port 10000 by default
 EXPOSE 10000
 
-# Start services via Supervisor
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+# Start services via entrypoint script
+CMD ["/usr/local/bin/start.sh"]
