@@ -9,13 +9,13 @@ import { ItemService } from 'src/app/core/services/personaje.service';
 })
 export class DeleteItemComponent {
 
-  @Input() itemId?: string;
+  @Input() itemId?: number;
   @Output() cerrar = new EventEmitter<void>();
 
   constructor(private itemService: ItemService) {}
 
 onEliminar() {
-  if (!this.itemId) return;
+  if (this.itemId == null) return;
 
   this.itemService.eliminarItem(this.itemId).subscribe(() => {
     this.itemService.cargarItems();

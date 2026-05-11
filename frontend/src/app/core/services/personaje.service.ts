@@ -30,7 +30,7 @@ export class ItemService {
     return this.http.post<Personaje>(this.apiUrl, formData);
   }
 
-  eliminarItem(id: string) {
+  eliminarItem(id: number | string) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 

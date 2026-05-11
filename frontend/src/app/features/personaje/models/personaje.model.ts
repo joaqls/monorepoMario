@@ -1,6 +1,7 @@
 export interface Personaje {
-  _id?: string;         
+  id?: number;
   nombre: string;
-  categoria: string;
-  nivel?: string;
+  tipo: string;
+  poder: number;
+  mundo: string;
 }

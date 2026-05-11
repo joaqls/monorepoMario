@@ -10,15 +10,16 @@ import { Personaje } from '../models/personaje.model';
 export class ItemCardComponent {
 
   @Input() personaje!: Personaje;
-@Output() eliminar = new EventEmitter<string>();
+  @Output() eliminar = new EventEmitter<number>();
 
-borrar() {
-  this.eliminar.emit(this.personaje._id);
-}
+  borrar() {
+    if (this.personaje.id == null) return;
+    this.eliminar.emit(this.personaje.id);
+  }
 
   mostrarEliminar = false;
-abrirEliminar() {
-  this.mostrarEliminar = true;
-}
+  abrirEliminar() {
+    this.mostrarEliminar = true;
+  }
 }
 

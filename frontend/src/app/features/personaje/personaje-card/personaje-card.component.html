@@ -1,13 +1,14 @@
 <div class="card">
   <h3>{{ personaje.nombre }}</h3>
-  <p>{{ personaje.categoria }}</p>
-    <p>{{ personaje.nivel }}</p>
+  <p><strong>Tipo:</strong> {{ personaje.tipo }}</p>
+  <p><strong>Poder:</strong> {{ personaje.poder }}</p>
+  <p><strong>Mundo:</strong> {{ personaje.mundo }}</p>
 
   <button (click)="abrirEliminar()">Eliminar</button>
 
 <app-delete-personaje 
   *ngIf="mostrarEliminar"
-  [itemId]="personaje._id"
+  [itemId]="personaje.id"
   (cerrar)="mostrarEliminar = false">
 </app-delete-personaje>
 
