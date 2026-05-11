@@ -12,25 +12,18 @@ export class NewItemComponent {
   @Output() cerrar = new EventEmitter<void>();
 
   nombre = '';
-  categoria = '';
-  nivel = '';
-  selectedFile!: File;
+  tipo = '';
+  poder = '';
+  mundo = '';
 
   constructor(private itemService: ItemService) {}
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-  }
 
   crearItem() {
     const formData = new FormData();
     formData.append('nombre', this.nombre);
-    formData.append('categoria', this.categoria);
-    formData.append('nivel', this.nivel);
-
-    if (this.selectedFile) {
-      formData.append('imagen', this.selectedFile);
-    }
+    formData.append('tipo', this.tipo);
+    formData.append('poder', this.poder);
+    formData.append('mundo', this.mundo);
 
     this.itemService.agregarItem(formData).subscribe(nuevo => {
       // actualizamos la lista manualmente

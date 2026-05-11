@@ -3,8 +3,9 @@
     <h2>Nuevo elemento</h2>
 
     <input [(ngModel)]="nombre" placeholder="Nombre">
-    <input [(ngModel)]="categoria" placeholder="Categoría">
-    <textarea [(ngModel)]="nivel" placeholder="Nivel de poder"></textarea>
+    <input [(ngModel)]="tipo" placeholder="Tipo">
+    <input [(ngModel)]="poder" type="number" placeholder="Poder">
+    <input [(ngModel)]="mundo" placeholder="Mundo">
 
     <button (click)="crearItem()">Guardar</button>
     <button (click)="cerrar.emit()">Cancelar</button>
