@@ -16,8 +16,13 @@ export class ItemService {
   constructor(private http: HttpClient) {}
 
   cargarItems() {
-    this.http.get<Personaje[]>(this.apiUrl).subscribe(data => {
-      this.itemSubject.next(data);
+    this.http.get<Personaje[]>(this.apiUrl).subscribe({
+      next: data => {
+        this.itemSubject.next(data);
+      },
+      error: () => {
+        this.itemSubject.next([]);
+      }
     });
   }
 
